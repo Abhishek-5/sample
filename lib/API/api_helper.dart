@@ -24,7 +24,6 @@ class ApiBaseHelper {
   }
 
   dynamic _returnResponse(http.Response response) {
-    print(response.statusCode);
     switch (response.statusCode) {
       case 200:
         var responseJson = json.decode(response.body.toString());

@@ -1,9 +1,8 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:sample/signUpScreen.dart';
+
 
 class SignUpScreen extends StatefulWidget {
   SignUpScreen({Key? key}) : super(key: key);
@@ -127,8 +126,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       child: Text('SignUp', style: TextStyle(fontSize: 20),),
                       onPressed: () {
                         if(validation()){
-                          print(nameController.text);
-                        print(passwordController.text);
                         Navigator.pop(context);
                         }
                       },
@@ -217,8 +214,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
     setState(() {
       if (pickedFile != null) {
         _image = File(pickedFile.path);
-      } else {
-        print('No image selected.');
       }
     });
   }
@@ -228,8 +223,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
     setState(() {
       if (pickedFile != null) {
         _image = File(pickedFile.path);
-      } else {
-        print('No image selected.');
       }
     });
   }

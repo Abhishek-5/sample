@@ -14,8 +14,6 @@ class CommonFuture<T> extends StatelessWidget {
       builder: (BuildContext context, AsyncSnapshot<T> snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           if (snapshot.hasError) {
-            print("this is error now ${snapshot.error}");
-            // return Text('Error Occurred');
             return Center(child: Text('${snapshot.error}'));
           }
           if (snapshot.data == null) {

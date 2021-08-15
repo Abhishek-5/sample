@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:sample/homeScreen.dart';
-import 'package:sample/secondScreen.dart';
-import 'package:sample/signUpScreen.dart';
-import 'dart:io';
-import 'dataGetModal.dart';
+import 'package:sample/Screens/Auth%20Module/signUpScreen.dart';
+import 'package:sample/Screens/HomeScreen/homeScreen.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({Key? key}) : super(key: key);
@@ -93,10 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           "pass" : passwordController.text.toString()
                           };
                         await box.put('dave', person);
-                        print("box.get(person)${box.values}");
                         Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage()));
-                        print(nameController.text);
-                        print(passwordController.text);
                         }
                       },
                     )),
